@@ -5,6 +5,7 @@ import os
 import wave
 import math
 import threading
+import flet_audio as fta
 
 # Generate a beep sound if it doesn't exist
 def ensure_alarm_sound():
@@ -47,7 +48,7 @@ def main(page: ft.Page):
     page.vertical_alignment = ft.MainAxisAlignment.START
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
-    alarm_sound = ft.Audio(src="alarm.wav", autoplay=False)
+    alarm_sound = fta.Audio(src="alarm.wav", autoplay=False)
     page.overlay.append(alarm_sound)
 
     # --- Timer Section ---
